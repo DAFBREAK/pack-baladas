@@ -67,6 +67,28 @@
       display: block;
     }
 
+    /* Portada Principal del Pack */
+    .pack-cover-container {
+      max-width: 580px;
+      margin: 20px auto 25px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 10px 35px rgba(245, 192, 68, 0.25), 0 0 20px rgba(62, 205, 244, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pack-cover-container:hover {
+      transform: scale(1.015);
+      box-shadow: 0 14px 45px rgba(245, 192, 68, 0.35);
+    }
+
+    .pack-cover-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .badge-top {
       display: inline-block;
       background: rgba(245, 192, 68, 0.15);
@@ -420,6 +442,7 @@
       h1 { font-size: 1.7rem; }
       .pack-card.featured { transform: none; }
       .guarantee-box { flex-direction: column; text-align: center; }
+      .pack-cover-container { max-width: 100%; }
     }
   </style>
 </head>
@@ -429,12 +452,16 @@
     <!-- Header -->
     <header>
       <div class="logo-container">
-        <!-- Reemplaza 'logo.png' por el archivo PNG de tu logo -->
         <img src="807381.png" alt="Música Para DJs y Packs" onerror="this.src='https://via.placeholder.com/260x100/10101a/3ecdf4?text=Música+Para+DJs+y+Packs'">
       </div>
       <div class="badge-top"><i class="fa-solid fa-crown"></i> Edición Coleccionista</div>
       <h1>Pack Baladas Románticas</h1>
       <p class="subtitle">La librería musical de baladas más completa y organizada en máxima calidad de audio y video. Pensada para DJs, coleccionistas y amantes de la buena música.</p>
+      
+      <!-- Portada Principal del Pack -->
+      <div class="pack-cover-container">
+        <img src="https://i.ibb.co/q3s4hXSD/portada-baladas.jpg" alt="Portada Pack Baladas Románticas" onerror="this.src='https://i.ibb.co/6R2qG2T/banner.jpg'">
+      </div>
     </header>
 
     <!-- Botones de Enlaces / Catálogos / Demos -->
@@ -480,6 +507,7 @@
       <div class="select-wrapper">
         <select id="countrySelect" class="country-select" onchange="updatePrices()">
           <option value="mexico" selected>🇲🇽 México (MXN)</option>
+          <option value="bolivia">🇧🇴 Bolivia (BOB)</option>
           <option value="chile">🇨🇱 Chile (CLP)</option>
           <option value="colombia">🇨🇴 Colombia (COP)</option>
           <option value="usa">🇺🇸 Estados Unidos / Internacional (USD)</option>
@@ -632,6 +660,15 @@
         flac: "150 MXN",
         combo: "250 MXN",
         paymentInfo: "<i class='fa-solid fa-credit-card'></i> <strong>Medios de pago disponibles:</strong> Depósito en OXXO o Transferencia Bancaria"
+      },
+      bolivia: {
+        countryName: "Bolivia",
+        currencyText: "BOLIVIANOS (Bs)",
+        mp3: "100 Bs",
+        video: "100 Bs",
+        flac: "100 Bs",
+        combo: "200 Bs",
+        paymentInfo: "<i class='fa-solid fa-qrcode'></i> <strong>Medios de pago disponibles:</strong> Pago por Código QR"
       },
       chile: {
         countryName: "Chile",
